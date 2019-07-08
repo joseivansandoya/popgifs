@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Container from './Container';
 
@@ -9,6 +10,9 @@ const HeaderWrapper = styled.div`
 
   .container {
     text-align: center;
+  }
+  a {
+    text-decoration: none;
   }
   span {
     color: #FFFFFF;
@@ -24,9 +28,11 @@ function Header () {
   return (
     <HeaderWrapper>
       <Container>
-        <span>Pop</span>
-        <span className='green'>Gifs</span>
-        <span>!</span>
+        <Link to="/">
+          <span>Pop</span>
+          <span className='green'>Gifs</span>
+          <span>!</span>
+        </Link>
       </Container>
     </HeaderWrapper>
   )

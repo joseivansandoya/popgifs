@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 import App from './App';
-import './normalize.css';
+import './styles/normalize.css';
 
 const store = createStore(
   reducers,

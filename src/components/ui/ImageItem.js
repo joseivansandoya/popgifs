@@ -34,12 +34,13 @@ const ImageItem = styled.div`
 `;
 
 export default props => {
+  const title = props.title || 'GIF';
   return (
     <ImageItem className='image-item'>
       <Link to={props.detailUrl}>
-        <img src={props.preview} alt={props.title}/>
+        <img src={props.preview} alt={title}/>
         <div className='mask'>
-          <p>{props.title}</p>
+          <p>{title}</p>
         </div>
       </Link>
     </ImageItem>
