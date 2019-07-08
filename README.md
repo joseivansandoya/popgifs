@@ -1,4 +1,5 @@
-PopGifs! code challenge
+###### PopGifs! code challenge
+
 ![Cover image](https://github.com/joseivansandoya/popgifs/blob/master/assets/cover.jpg)
 
 PopGifs! is a React application that shows a set of gifs retrieved from [Giphy](https://developers.giphy.com/) the page allows you to filter by keywords.
@@ -18,12 +19,30 @@ You will also see any lint errors in the console.
 
 ## Development procedure
 
-In the project directory, you can run:
+The procedured I followed for coding this challenge was:
 
-### `npm start`
+### 1. Create new React application
+By using the CRA tool I get a fresh instance of a single page React application. This is really usefull if you want to avoid all the webpack configuration boilerplate.
+In addition to this, I installed all required dependencies (Redux and React Router).
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 2. Identify React components and design Redux store
+Nothing better than a sketch to figure out what the components and also Redux store will be
+![Diagram](https://github.com/joseivansandoya/popgifs/blob/master/assets/diagram.jpg)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Main components:
+- ImagesListScreen
+- ImageDetailScreen
+Redix store:
+- List data (loading and error flags)
+- Image detail data (loading and error flags)
+
+### 3. Project structure (src)
+Keeping in mind mainatinability purposes the *src* directory was structures as follows:
+- **actions**: repository for all Redux actions
+- **components**: in addition to the main screen components, this directory contains all **ui** ones (Header, SearchPanel, ImageItem, etc.)
+- **reducers**: repository for all Redux reducers
+- **styles**: normalize and vendor styles
+- **App.js**: main component that calls React routes
+- **giphy-config.js**: initial configuration for making use of Giphy API
+- **index.js**: entrypoint component (this one initialize Redux store)
+- **Router.js**: React routes configuration
