@@ -6,7 +6,7 @@ const ImageExpanded = styled.div`
   margin-bottom: 30px;
 
   .image-header {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   .image-header h2 {
     display: inline;

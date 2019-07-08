@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as list from './../actions/list';
+import * as list from '../actions/list';
+
 import Layout from './ui/Layout';
 import SearchPanel from './ui/SearchPanel';
 import Loading from './ui/Loading';
@@ -36,9 +37,11 @@ class ImagesList extends React.Component {
   }
 
   render() {
-    const loading = this.props.loading;
-    const data = this.props.data;
-    const error = this.props.error || false;
+    const {
+      loading,
+      data,
+      error
+    } = this.props;
 
     return (
       <Layout>

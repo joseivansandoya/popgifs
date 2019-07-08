@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as detail from './../actions/detail';
+import * as detail from '../actions/detail';
+
 import Layout from './ui/Layout';
 import Loading from './ui/Loading';
 import ImageExpanded from './ui/ImageExpanded';
@@ -21,15 +22,13 @@ class ImageDetail extends React.Component {
   }
 
   render() {
-    const loadingData = this.props.loadingData;
-    const data = this.props.data;
-    const loadingRelated = this.props.loadingRelated;
-    const related = this.props.related;
-    const errorData = this.props.errorData || false;
-
-    if (errorData) {
-      return <p>Ups a network error ocurred :(</p>
-    }
+    const {
+      loadingData,
+      data,
+      loadingRelated,
+      related,
+      errorData
+    } = this.props;
 
     return (
       <Layout>
@@ -42,11 +41,6 @@ class ImageDetail extends React.Component {
               data={data.data}
             />
           }
-          {errorData &&
-            <ErrorMessage
-              message='A network error ocurred 📡'
-            />
-          }
           {loadingRelated &&
             <Loading />
           }
@@ -55,6 +49,11 @@ class ImageDetail extends React.Component {
               <h3>See other popular images</h3>
               <ImageSlider related={related}/>
             </div>
+          }
+          {errorData &&
+            <ErrorMessage
+              message='A network error ocurred 📡'
+            />
           }
         </div>
       </Layout>

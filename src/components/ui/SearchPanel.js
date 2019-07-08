@@ -30,6 +30,16 @@ const SearchPanelWrapper = styled.div`
   button:hover {
     background-color: #5c2674;
   }
+
+  @media screen and (max-width: 865px) {
+    input {
+      width: 55%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    text-align: center;
+  }
 `;
 
 function SearchPanel (props) {

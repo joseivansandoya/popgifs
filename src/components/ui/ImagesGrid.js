@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import ImageItem from './ImageItem';
 
 const ImagesGrid = styled.div`
@@ -13,6 +14,28 @@ const ImagesGrid = styled.div`
     height: 380px;
     margin: 1%;
     overflow: hidden;
+    background: #f7f7f7;
+  }
+
+  @media screen and (max-width: 720px) {
+    li {
+      height: 300px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    li {
+      width: 45%;
+      margin: 1%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    li {
+      width: 95%;
+      height: auto;
+      margin: 1%;
+    }
   }
 `;
 

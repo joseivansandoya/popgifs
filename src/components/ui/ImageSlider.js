@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
+
 import ImageItem from './ImageItem';
 import './../../styles/slick.css';
 import './../../styles/slick-theme.css';
@@ -11,8 +12,14 @@ const ImageSliderWrapper = styled.div`
   .slick-prev:before, .slick-next:before {
     color: #000 !important;
   }
-  .image-item-wrapper {
-    height: 400px;
+  .slick-prev {
+    left: 2px !important;
+  }
+  .slick-next {
+    right: 2px !important;
+  }
+  .slick-slider {
+    padding: 0 40px;
   }
   .image-item a {
     margin: 0 10px;
@@ -25,7 +32,34 @@ function ImageSlider (props) {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (

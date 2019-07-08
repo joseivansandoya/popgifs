@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 // Import App screens
-import ImagesList from './components/ImagesList';
-import ImageDetail from './components/ImageDetail';
+import ImagesList from './components/ImagesListScreen';
+import ImageDetail from './components/ImageDetailScreen';
 
 function Router () {
   return (
