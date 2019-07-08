@@ -2,7 +2,7 @@
 
 ![Cover image](https://github.com/joseivansandoya/popgifs/blob/master/assets/cover.jpg)
 
-PopGifs! is a React application that shows a set of gifs retrieved from [Giphy](https://developers.giphy.com/) the page allows you to filter by keywords.
+PopGifs! is a React application that shows a set of gifs retrieved from [Giphy](https://developers.giphy.com/). The page allows you to filter by keywords.
 Once you click on a specific gif the page will expand that image and in addition to that it will show you another set of random gifs.
 
 ## Available Script
@@ -27,17 +27,19 @@ In addition to this, I installed all required dependencies (Redux and React Rout
 
 ### 2. Identify React components and design Redux store
 Nothing better than a sketch to figure out what the components and also Redux store will be
+
 ![Diagram](https://github.com/joseivansandoya/popgifs/blob/master/assets/diagram.jpg)
 
 Main components:
 - ImagesListScreen
 - ImageDetailScreen
-Redix store:
+
+Redux store:
 - List data (loading and error flags)
 - Image detail data (loading and error flags)
 
 ### 3. Project structure (src)
-Keeping in mind mainatinability purposes the *src* directory was structures as follows:
+Keeping in mind mainatinability purposes, the *src* directory was structures as follows:
 - **actions**: repository for all Redux actions
 - **components**: in addition to the main screen components, this directory contains all **ui** ones (Header, SearchPanel, ImageItem, etc.)
 - **reducers**: repository for all Redux reducers
